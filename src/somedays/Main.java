@@ -1,8 +1,6 @@
 package somedays;
 
-import java.awt.Desktop;
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.util.ArrayList;
@@ -30,11 +28,11 @@ public class Main {
 
 		// It's a list of dates in the same format as in the source file (see
 		// below)
-		String[] dateArray = { "2017-03-17", "2017-03-18", "2017-03-19" };
+		String[] dateArray = { "2017-04-15", "2017-04-16", "2017-04-17" };
 
 		// FileReader is created using the relevant source file name, please
 		// change accordingly
-		try (BufferedReader br = new BufferedReader(new FileReader("C:/trial/17-19_03_2017.csv"))) {
+		try (BufferedReader br = new BufferedReader(new FileReader("C:/trial/14-17_03_2017.csv"))) {
 			while ((line = br.readLine()) != null) {
 				list.add(line);
 			}
@@ -164,8 +162,8 @@ public class Main {
 
 			excel.getWorkbook().close();
 
-			File myFile = new File(fileName);
-			Desktop.getDesktop().open(myFile);
+			// File myFile = new File(fileName);
+			// Desktop.getDesktop().open(myFile);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}

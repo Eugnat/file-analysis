@@ -1,8 +1,6 @@
 package onefile;
 
-import java.awt.Desktop;
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.util.ArrayList;
@@ -32,7 +30,7 @@ public class Main {
 		// An array of file names that correspond to the required dates. If
 		// needed, you can add a number of dates. The only condition: it must
 		// coincide with the file name in the string below
-		String[] fileNames = { "16_03_2017" };
+		String[] fileNames = { "20_04_2017" };
 
 		ExcelCreation excel = new ExcelCreation(fileName);
 
@@ -76,7 +74,8 @@ public class Main {
 
 			}
 
-			count = list.stream().count() - 1;
+			count = list.stream().count();
+			// count = list.stream().count();
 
 			row.createCell(1, CellType.NUMERIC).setCellValue(count);
 			System.out.println("Total records: " + count);
@@ -162,8 +161,8 @@ public class Main {
 
 			excel.getWorkbook().close();
 
-			File myFile = new File(fileName);
-			Desktop.getDesktop().open(myFile);
+			// File myFile = new File(fileName);
+			// Desktop.getDesktop().open(myFile);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
